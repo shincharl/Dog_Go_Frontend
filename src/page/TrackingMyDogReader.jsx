@@ -37,7 +37,7 @@ const TrackingMyDogReader = () => {
   const fetchRecords = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/tracking?page=${page}&size=${PAGE_SIZE}`
+        `https://doggobackend-production.up.railway.app/api/tracking?page=${page}&size=${PAGE_SIZE}`
       );
       const data = res.data.content ?? [];
       if (data.length < PAGE_SIZE) setHasMore(false);
@@ -120,7 +120,7 @@ const TrackingMyDogReader = () => {
 
                     <div className={Styles.imageWrapper}>
                       <img
-                        src={record.photoPaths?.[0] ? `http://localhost:8080${record.photoPaths[0]}` : "/images/no-image.png"}
+                        src={record.photoPaths?.[0] ? `https://doggobackend-production.up.railway.app${record.photoPaths[0]}` : "/images/no-image.png"}
                         alt="강아지"
                       />
                       <div className={Styles.overlay}>산책 결과</div>

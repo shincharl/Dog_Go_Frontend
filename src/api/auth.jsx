@@ -11,7 +11,7 @@ const apiClient = axios.create({
 export const login = async (email, password) => {
 
     try {
-        const res = await apiClient.post('/login', {email, password});
+        const res = await apiClient.post('/login', {email, password}, { withCredentials: true });
         return res;   
     } catch (error) {
         throw error;
@@ -28,7 +28,7 @@ export const signup = async (name, email, password, adminCode) => {
     }
 
    try {
-        const res = await apiClient.post('/signup', {name, email, password, adminCode});
+        const res = await apiClient.post('/signup', {name, email, password, adminCode}, { withCredentials: true });
         return res;
    } catch (error) {
         throw error;

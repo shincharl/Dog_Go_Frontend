@@ -72,7 +72,7 @@ const TrackingMyDogWriter = () => {
   useEffect(() => {
     const fetchReservation = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/reservation/${id}`);
+        const res = await axios.get(`https://doggobackend-production.up.railway.app/api/reservation/${id}`);
         setReservation(res.data);
       } catch (error) {
         console.error("예약 정보 조회 실패", error);
@@ -111,7 +111,7 @@ const TrackingMyDogWriter = () => {
       });
 
       await axios.post(
-        "http://localhost:8080/api/tracking",
+        "https://doggobackend-production.up.railway.app/api/tracking",
         formData,
       );
 
