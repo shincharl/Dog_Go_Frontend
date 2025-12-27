@@ -1,23 +1,36 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL : 'http://localhost:8080/api',
+    baseURL : 'https://doggobackend-production.up.railway.app/api',
     headers : {'Content-Type' : 'application/json'},
+    withCredentials: true,
 });
 
 /* 로그인 시도 axios */
 
-export const login = (email, password) => {
-    return apiClient.post('/login', {email, password});
+export const login = async (email, password) => {
+
+    try {
+        const res = await apiClient.post('/login', {email, password});
+        return res;   
+    } catch (error) {
+        throw error;
+    }
+
 };
 
 /* 회원가입 시도 axios */
 
-export const signup = (name, email, password) => {
+export const signup = async (name, email, password, adminCode) => {
 
-    if(!name || !email || !password ){
+    if(!name || !email || !password || !adminCode ){
         throw new Error("잘못된 입력입니다. 확인해 주세요.")
     }
 
-    return apiClient.post('/signup', {name, email, password});  
+   try {
+        const res = await apiClient.post('/signup', {name, email, password, adminCode});
+        return res;
+   } catch (error) {
+        throw error;
+   }
 };

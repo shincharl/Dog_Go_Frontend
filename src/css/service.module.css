@@ -48,7 +48,7 @@
   padding: 2rem;
   max-width: 1100px;
   margin: 0 auto;
-  background-color: #fffaf5; /* 크림색 배경 */
+  background-color: #f0f4f8;
 }
 
 /* 제목 스타일 */
@@ -103,14 +103,14 @@
 .card p {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #d58936; /* 포인트 오렌지 */
+  color:#d58936; /* 포인트 오렌지 */
 }
 
 /* 구분선 */
 hr {
   border: none;
   height: 2px;
-  background: linear-gradient(to right, #d4a373, transparent);
+  background: linear-gradient(to right, gray, transparent);
   margin: 3rem 0;
 }
 

@@ -1,0 +1,128 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #fff8f0;
+  padding: 30px 20px;
+  border-radius: 16px;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.modal h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #7a5a3a;
+}
+
+.regionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.regionButton {
+  flex: 1 1 40%;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #d2b48c;
+  background-color: #f5deb3;
+  color: #7a5a3a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.regionButton:hover {
+  background-color: #deb887;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.regionButton.active {
+  background-color: #c49e77;
+  color: #fff;
+  border-color: #c49e77;
+}
+
+/* 모달 버튼 컨테이너 */
+.modalBtns {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 이전 버튼 - 회색 계열 */
+.prevBtn {
+  padding: 6px 12px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.prevBtn:hover {
+  background: #ddd;
+}
+
+/* 종료 버튼 - 붉은 느낌으로 경고 느낌 */
+.closeBtn {
+  padding: 6px 12px;
+  background: #f8d7da; /* 연한 빨강/핑크 */
+  border: 1px solid #f5c2c7;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #842029;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #f5c2c7;
+}
+
+/* 다음 버튼 - 강조 색상 (베이지/브라운 계열) */
+.nextBtn {
+  padding: 6px 12px;
+  background: #deb887; /* 강아지 베이지 느낌 */
+  border: 1px solid #c49e77;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nextBtn:disabled {
+  background: #f5deb3;
+  border-color: #deb887;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.nextBtn:hover:enabled {
+  background: #c49e77;
+  border-color: #a67650;
+}

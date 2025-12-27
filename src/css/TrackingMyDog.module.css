@@ -1,0 +1,268 @@
+/* ===== 전체 ===== */
+.container {
+  min-height: 100vh;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* 로딩 카드 */
+.loadingCard {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* 스켈레톤 공통 */
+.skeletonTitle,
+.skeletonSummary,
+.skeletonBox {
+  background: linear-gradient(
+    100deg,
+    #eeeeee 30%,
+    #f5f5f5 50%,
+    #eeeeee 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* 제목 자리 */
+.skeletonTitle {
+  height: 26px;
+  width: 60%;
+  margin: 0 auto 20px;
+}
+
+/* 요약 카드 자리 */
+.skeletonSummary {
+  height: 72px;
+  width: 100%;
+}
+
+/* 일반 콘텐츠 블록 */
+.skeletonBox {
+  height: 110px;
+  width: 100%;
+}
+
+/* 애니메이션 */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== 메인 카드 ===== */
+.writeCard {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 제목 ===== */
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* ===== 요약 카드 ===== */
+.summaryCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #eef1f6);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 26px;
+}
+
+.summaryCard strong {
+  font-size: 16px;
+}
+
+.summaryCard p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== 공통 섹션 ===== */
+.photoSection,
+.recordSection,
+.tagSection,
+.statusSection {
+  margin-bottom: 26px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ===== 사진 업로드 ===== */
+.photoSection input[type="file"] {
+  margin-bottom: 12px;
+}
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.previewGrid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== 기록 ===== */
+.recordSection textarea {
+  width: 100%;
+  min-height: 110px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  padding: 14px;
+  font-size: 14px;
+  resize: none;
+  background: #fafafa;
+}
+
+.recordSection textarea:focus {
+  outline: none;
+  border-color: #3897f0;
+  background: #fff;
+}
+
+/* ===== 태그 ===== */
+.tagInputBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.tagInputBox input {
+  border: none;
+  flex: 1;
+  min-width: 120px;
+  font-size: 14px;
+  background: transparent;
+}
+
+.tagInputBox input:focus {
+  outline: none;
+}
+
+/* 태그 칩 */
+.tagChip {
+  background: #eef3ff;
+  color: #3b5bdb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tagChip button {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  color: #3b5bdb;
+}
+
+/* ===== 상태 체크 ===== */
+.statusSection h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.statusGroup {
+  margin-bottom: 16px;
+}
+
+.statusTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* 칩 그룹 */
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 상태 칩 */
+.statusChip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.statusChip:hover {
+  background: #eaeaea;
+}
+
+/* 선택됨 */
+.active {
+  background: #3897f0;
+  border-color: #3897f0;
+  color: white;
+  font-weight: 600;
+}
+
+/* ===== 저장 버튼 ===== */
+.saveBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #3897f0, #2f80ed);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.saveBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(56, 151, 240, 0.35);
+}

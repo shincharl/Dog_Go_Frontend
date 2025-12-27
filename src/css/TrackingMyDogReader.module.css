@@ -1,0 +1,342 @@
+/* 전체 페이지 배경 */
+body {
+  background-color:#f0f8ff; /* 연한 하늘색 */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* 전체 컨테이너 */
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #f5f5f5;
+}
+
+/* 날짜 선택 달력 */
+.datePickerWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+  max-width: 360px;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 18px;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #0095f6;
+  box-shadow: 0 4px 12px rgba(0,149,246,0.3);
+  outline: none;
+}
+
+/* 달력 내부 디자인 */
+.react-datepicker {
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-size: 14px;
+}
+
+.react-datepicker__header {
+  background-color: #f0f4ff;
+  border-bottom: 1px solid #eee;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 8px 0;
+}
+
+.react-datepicker__current-month {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+}
+
+.react-datepicker__day-names {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4px;
+}
+
+.react-datepicker__day-name {
+  width: 32px;
+  line-height: 32px;
+  font-size: 13px;
+  color: #555;
+}
+
+.react-datepicker__month {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.react-datepicker__day {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  margin: 2px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.react-datepicker__day:hover {
+  background-color: #e6f0ff;
+}
+
+.react-datepicker__day--selected {
+  background-color: #0095f6;
+  color: white;
+  font-weight: 600;
+}
+
+.react-datepicker__day--today {
+  border: 1px solid #0095f6;
+  font-weight: 500;
+}
+
+/* 피드 */
+.feed {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* 카드 */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* 이미지 */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: #eee;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.03);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 카드 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nickname {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.more {
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.more:hover {
+  color: #000;
+}
+
+/* 액션 */
+.actions {
+  display: flex;
+  gap: 18px;
+  padding: 10px 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.actions span:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+/* 강아지 정보 */
+.dogInfo {
+  display: flex;
+  gap: 14px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* 본문 */
+.info {
+  padding: 10px 14px 14px;
+}
+
+.record {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.nicknameInline {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.moreBtn {
+  background: none;
+  border: none;
+  color: #0095f6;
+  font-size: 13px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+/* 태그 */
+.tags {
+  margin-top: 6px;
+}
+
+.tag {
+  margin-right: 6px;
+  color: #00376b;
+  font-size: 13px;
+}
+
+/* 상태 박스 */
+.statusBox {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f7f9ff;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.statusTitle {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.statusRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.statusKey {
+  font-weight: 500;
+}
+
+.statusValue {
+  color: #555;
+}
+
+/* 날짜 헤더 */
+.dateHeader {
+  background-color: #f0f8ff;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 0;
+  margin: 16px 0 8px 0;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 로딩/끝 메시지 */
+.loader {
+  text-align: center;
+  padding: 12px 0;
+  color: #888;
+}
+
+.endCard {
+  text-align: center;
+  padding: 40px 0 60px;
+  color: #777;
+}
+
+.endEmoji {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.endTitle {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.endSub {
+  font-size: 13px;
+  color: #aaa;
+}

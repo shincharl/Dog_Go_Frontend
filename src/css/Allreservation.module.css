@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 가로 중앙 정렬 */
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    max-width: 1200px;   /* 카드 최대 너비 조정 */
+    min-width: 750px;    /* 카드 최소 너비 */
+    width: 100%;        /* 반응형 유지 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* 카드 내용 영역 */
+.content {
+    flex: 1;
+    padding: 15px 20px;  /* 카드 안쪽 여백 확보 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.name {
+    margin: 0 0 10px 0;
+    color: #34495e;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text {
+    margin: 3px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 오른쪽 버튼 wrapper */
+.rightButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0 15px 15px 0;
+}
+
+/* 공통 버튼 스타일 */
+.rightButtonArea {
+    background: #4f46e5; /* 수정하기 색 */
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px; /*글자 크기 16px*/
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.rightButtonArea:hover {
+    transform: scale(1.05);
+    background: #4338ca;
+}
+
+.deleteButton {
+    background: #f44336;
+}
+
+.deleteButton:hover {
+    background: #d32f2f;
+}
+
+.deleteButton:active {
+    background: #b71c1c;
+}
