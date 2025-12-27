@@ -120,7 +120,7 @@ const TrackingMyDogReader = () => {
 
                     <div className={Styles.imageWrapper}>
                       <img
-                        src={record.photoPaths?.[0] ? `https://doggobackend-production.up.railway.app/${record.photoPaths[0]}` : "/images/no-image.png"}
+                        src={record.photoPaths?.[0] ? `https://doggobackend-production.up.railway.app${record.photoPaths[0]}` : "/images/no-image.png"}
                         alt="강아지"
                       />
                       <div className={Styles.overlay}>산책 결과</div>
