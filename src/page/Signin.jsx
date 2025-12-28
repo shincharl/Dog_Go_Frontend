@@ -59,7 +59,7 @@ const AdminSignin = () => {
       setAdminCode("");
       setErrorMessage("");
     } catch (error) {
-      alert(error.response?.data?.message || "회원가입 실패");
+      alert(error.response?.data?.message || "회원가입 실패!");
     }
   };
 
