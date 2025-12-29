@@ -1,5 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=Dog-GO&fontSize=90)
 
+<img width="1905" height="1253" alt="Screenshot 2025-12-29 at 13 53 24" src="https://github.com/user-attachments/assets/692857c3-ee35-4c9f-b47c-b23eae2f2c96" />
+
 # Dog-Go
 
 강아지 산책 예약 & 관리자 웹 서비스
@@ -260,6 +262,8 @@ BaseEntity (공통 생성/수정 시간 관리)
 | tracking | Tracking | 연관된 산책 기록 |
 
 ---
+
+<img width="1536" height="1024" alt="6bc4eb8e-00c9-444f-baa9-c4115cca505e" src="https://github.com/user-attachments/assets/b0ac21e9-e4f0-4533-947d-96b59c769951" />
 
 ## 시스템 아키텍처
 
