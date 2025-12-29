@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=강아지 산책 서비스%20render&fontSize=90)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dog-Go
 
-## Available Scripts
+강아지 산책 예약 & 관리자 웹 서비스
 
-In the project directory, you can run:
+## 프로젝트 소개
 
-### `yarn start`
+Dog-Go는 반려견 보호자와 산책 서비스를 연결하는 웹 기반 예약 관리 서비스 입니다.
+사용자와 관리자의 역할을 명확히 분리하고,
+Spring Security 기반 세션 인증을 중심으로 실제 서비스 환경을 고려해 구현했습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+프론트엔드와 백엔드를 분리하여 배포했으며,
+배포 환경에서 발생하는 인증,CORS 문제를 직접 해결한 경험을 담은 프로젝트입니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `yarn test`
+## 기술 스택
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
 
-### `yarn build`
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,vercel,vite)](https://skillicons.dev)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML5 + CSS3
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- JavaScript6
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- REACT
 
-### `yarn eject`
+- Axios
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Vercel
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- vite
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![My Skills](https://skillicons.dev/icons?i=java,spring)](https://skillicons.dev)
 
-## Learn More
+- Java 21
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Spring Boot 3.5
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Spring Security
 
-### Code Splitting
+- Spring Data JPA
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Database
 
-### Analyzing the Bundle Size
+[![My Skills](https://skillicons.dev/icons?i=postgres)](https://skillicons.dev)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- PostgreSQL (Railway)
 
-### Making a Progressive Web App
+### Infra
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[![My Skills](https://skillicons.dev/icons?i=vercel)](https://skillicons.dev)
 
-### Advanced Configuration
+- Railway (Backend, DB)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Vercel (Frontend)
 
-### Deployment
+- HTTPS 환경 구성
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `yarn build` fails to minify
+## 주요 기능
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 사용자
+
+- 강아지 산책 예약
+
+- 예약 상태 조회
+
+- 일자별 산책 결과 조회
+
+- QnA 및 의견 등록
+
+### 관리자 (ROLE_ADMIN)
+
+- 오늘 예약 / 만료 예약 조회
+
+- 이벤트 신청 예약 관리
+
+- 예약 상태 변경
+
+- 일자별 산책 결과 작성 및 저장
+
+- Q&A 관리
+
+---
+
+## 인증 & 보안 구조
+
+본 프로젝트는 JWT가 아닌 HttpSession 기반 인증을 사용합니다.
+
+### 인증 흐름
+
+1. 사용자가 로그인 요청
+
+2. `AuthenticationManager`를 통해 사용자 인증
+
+3. 인증 성공 시 `SecurityContext` 생성
+
+4. `HttpSessionSecurityContextRepository`를 통해 인증 정보를 HttpSession에 저장
+
+5. 서버가 `JSESSIONID` 쿠키 반환
+
+6. 이후 요청은 세션 쿠키 기반으로 인증 처리
+
+### 보안 설정
+
+- Spring Security 기반 접근 제어
+
+- 관리자 API는 `ROLE_ADMIN` 권한 필수
+
+- CORS 설정 + `allowCredentials=true` 필요
+
+- 프론트엔드 요청 시 `withCredentials` 사용
+
+---
+
+## 시스템 아키텍처
+
+### 설계 포인트
+
+- 프론트엔드 / 백엔드 완전 분리
+- 세션 기반 인증으로 서버 중심 보안 관리
+- 실 배포 환경에서의 인증 유지 문제 해결 경험
+
+---
+
+## 프로젝트를 통해 얻은 경험
+
+- spring Security 인증 흐름에 대한 이해
+
+- `SecurityContext`와 `HttpSession` 동작 방식 분석
+
+- CORS + 세션 쿠키 문제 해결
+
+- Railway / Vercel 환경에서의 실 배포 경험
+
+- 관리자 권한 분리 및 접근 제어 설계
+
+---
+
+### 배포 주소
+
+- Frontend: https://dog-go-frontend-roan.vercel.app
+- Backend : Railway 배포
